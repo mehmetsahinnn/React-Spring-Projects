@@ -20,7 +20,7 @@ function Login() {
         if (response.ok) {
             localStorage.setItem('username', username);
             localStorage.setItem('token', data.token);
-            window.location.href = '/atm';  // navigate to the ATM page
+            window.location.href = '/atm';
         } else {
             alert('Login failed');
         }

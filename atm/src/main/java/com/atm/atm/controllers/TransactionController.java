@@ -2,6 +2,7 @@ package com.atm.atm.controllers;
 
 import com.atm.atm.models.Transactions;
 import com.atm.atm.models.User;
+import com.atm.atm.repositories.TransactionRepository;
 import com.atm.atm.services.TransactionService;
 import com.atm.atm.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,13 +13,12 @@ import org.springframework.web.bind.annotation.*;
 @CrossOrigin(origins = "http://localhost:3000")
 @RequestMapping("/transactions")
 public class TransactionController {
-
-    private final TransactionService transactionService;
+    private final TransactionRepository transactionRepository;
     private final UserService userService;
 
     @Autowired
-    public TransactionController(TransactionService transactionService, UserService userService) {
-        this.transactionService = transactionService;
+    public TransactionController(TransactionRepository transactionRepository, UserService userService) {
+        this.transactionRepository = transactionRepository;
         this.userService = userService;
     }
 
@@ -34,7 +34,7 @@ public class TransactionController {
             transaction.setAmount(amount);
             transaction.setUser(user);
             transaction.setTransactionDate(new java.util.Date());
-            transactionService.save(transaction);
+            transactionRepository.save(transaction);
 
             return ResponseEntity.ok(user);
         } else {
@@ -55,7 +55,7 @@ public class TransactionController {
             transaction.setAmount(amount);
             transaction.setUser(user);
             transaction.setTransactionDate(new java.util.Date());
-            transactionService.save(transaction);
+            transactionRepository.save(transaction);
 
             return ResponseEntity.ok(user);
         } else {

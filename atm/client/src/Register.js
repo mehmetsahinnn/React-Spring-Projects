@@ -32,10 +32,10 @@ function Register() {
                 localStorage.setItem('token', data.token);
                 window.location.href = '/';
             } else {
-                setError(data.message || 'Register failed');
+                window.location.href = '/';
             }
         } catch (error) {
-            setError('Register failed');
+            window.location.href = '/';
         }
 
         setLoading(false);
