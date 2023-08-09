@@ -1,0 +1,14 @@
+.jobsContainer {
+  position: relative;
+  min-height: 100vh;  /* This ensures the container takes up the full view height */
+  padding-bottom: 30px; /* to provide space for the absolute positioned link */
+}
+
+.linkBottom {
+  position: absolute;
+  bottom: 10px;  /* 10px from the bottom, adjust as needed */
+  left: 50%;   /* To center the link horizontally */
+  transform: translateX(-50%);  /* To ensure true centering */
+  text-decoration: none; /* To remove underlines common with links */
+  color: blue;  /* Standard link color, adjust as needed */
+}
