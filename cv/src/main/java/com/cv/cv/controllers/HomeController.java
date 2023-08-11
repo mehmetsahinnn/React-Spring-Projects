@@ -11,7 +11,6 @@ import java.util.List;
 @CrossOrigin(origins = "http://localhost:3000")
 @RequestMapping("/api/users")
 public class HomeController {
-
     private final HomeService homeService;
 
     public HomeController(HomeService homeService) {

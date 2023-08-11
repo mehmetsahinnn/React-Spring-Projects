@@ -14,7 +14,6 @@ public class HomeService {
     public HomeService(HomeRepository homeRepository) {
         this.homeRepository = homeRepository;
     }
-
     public List<User> getAllUsers() {
         return homeRepository.findAll();
     }
